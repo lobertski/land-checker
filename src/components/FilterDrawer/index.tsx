@@ -58,6 +58,7 @@ export const FilterDrawer = ({
             size="small"
             sx={{ float: "right" }}
             onClick={() => handleFilterDrawer(false)}
+            data-testid="close-button"
           >
             <CloseOutlinedIcon fontSize="small" />
           </IconButton>
@@ -85,6 +86,7 @@ export const FilterDrawer = ({
                   <Checkbox
                     checked={isCheck}
                     onClick={() => handleCheckCouncil(index)}
+                    data-testid="checkbox"
                   />
                 }
                 label={
@@ -101,6 +103,7 @@ export const FilterDrawer = ({
           sx={{ marginTop: "auto", borderRadius: "0px" }}
           variant="contained"
           onClick={handleClearAll}
+          data-testid="clearall-button"
         >
           Clear All
         </Button>

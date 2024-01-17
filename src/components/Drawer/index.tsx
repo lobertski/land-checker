@@ -9,7 +9,7 @@ import {
 import CloseOutlinedIcon from "@mui/icons-material/CloseOutlined";
 
 import { IDrawer } from "../../types";
-import { field_name } from "../../static";
+import { field_name } from "../../constant";
 
 export const Drawer = ({
   propertyInfo = {},
@@ -39,6 +39,7 @@ export const Drawer = ({
             size="small"
             sx={{ float: "left" }}
             onClick={() => handleDrawer(false)}
+            data-testid="close-button"
           >
             <CloseOutlinedIcon fontSize="small" />
           </IconButton>

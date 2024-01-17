@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "./App.css";
 import { Map, Drawer, FilterDrawer } from "./components";
-import { properties } from "./static";
+import { properties } from "./constant";
 import { IProperty } from "./types";
 
 function App() {
