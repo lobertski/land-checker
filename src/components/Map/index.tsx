@@ -1,4 +1,4 @@
-import { MapContainer, Popup, TileLayer, Marker } from "react-leaflet";
+import { MapContainer, TileLayer, Marker } from "react-leaflet";
 import { IMap } from "../../types";
 import "leaflet/dist/leaflet.css";
 import L from "leaflet";
@@ -13,7 +13,7 @@ const DefaultIcon = L.icon({
 
 L.Marker.prototype.options.icon = DefaultIcon;
 
-export const Map = ({ properties }: IMap) => {
+export const Map = ({ properties, onClickMark }: IMap) => {
   return (
     <div style={{ width: "100%", height: "100vh" }}>
       <MapContainer center={[-37.8405, 146.3323]} zoom={7}>
@@ -22,12 +22,14 @@ export const Map = ({ properties }: IMap) => {
           attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
         />
 
-        {properties.map(({ latitude, longitude, property_id }) => (
-          <Marker position={[latitude, longitude]} key={property_id}>
-            <Popup>
-              A pretty CSS3 popup. <br /> Easily customizable.
-            </Popup>
-          </Marker>
+        {properties.map((property) => (
+          <Marker
+            position={[property.latitude, property.longitude]}
+            key={property.property_id}
+            eventHandlers={{
+              click: () => onClickMark(property),
+            }}
+          ></Marker>
         ))}
       </MapContainer>
     </div>

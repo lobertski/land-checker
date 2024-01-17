@@ -200,3 +200,14 @@ export const properties = [
     postcode: "3912",
   },
 ];
+
+export const field_name = {
+  property_id: "Property Id",
+  council: "Council",
+  council_property_number: "Council Property Number",
+  full_address: "Full address",
+  latitude: "Latitude",
+  lga_code: "LGA code",
+  longitude: "Longitude",
+  postcode: "Post code",
+};
