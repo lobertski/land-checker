@@ -19,3 +19,11 @@ export interface IDrawer {
   propertyInfo: IProperty | {};
   handleDrawer: (open: boolean) => void;
 }
+
+export interface IFilterDrawer {
+  handleFilterDrawer: (open: boolean) => void;
+  handleCheckCouncil: (index: number) => void;
+  handleClearAll: () => void;
+  isFilterOpen: boolean;
+  councils: { councilName: string; isCheck: boolean }[];
+}

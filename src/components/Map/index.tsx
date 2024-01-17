@@ -1,4 +1,4 @@
-import { MapContainer, TileLayer, Marker } from "react-leaflet";
+import { MapContainer, TileLayer, Marker, ZoomControl } from "react-leaflet";
 import { IMap } from "../../types";
 import "leaflet/dist/leaflet.css";
 import L from "leaflet";
@@ -16,11 +16,12 @@ L.Marker.prototype.options.icon = DefaultIcon;
 export const Map = ({ properties, onClickMark }: IMap) => {
   return (
     <div style={{ width: "100%", height: "100vh" }}>
-      <MapContainer center={[-37.8405, 146.3323]} zoom={7}>
+      <MapContainer center={[-37.8405, 146.3323]} zoom={7} zoomControl={false}>
         <TileLayer
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
           attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
         />
+        <ZoomControl position="bottomleft" />
 
         {properties.map((property) => (
           <Marker
