@@ -11,10 +11,11 @@ export interface IProperty {
 
 export interface IMap {
   properties: IProperty[];
-  onClickMark: (property: IProperty) => void;
+  onClickMark: (property: IProperty, open: boolean) => void;
 }
 
 export interface IDrawer {
   isOpen: boolean;
   propertyInfo: IProperty | {};
+  handleDrawer: (open: boolean) => void;
 }

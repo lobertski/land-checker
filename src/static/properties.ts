@@ -205,9 +205,9 @@ export const field_name = {
   property_id: "Property Id",
   council: "Council",
   council_property_number: "Council Property Number",
-  full_address: "Full address",
+  full_address: "Full Address",
   latitude: "Latitude",
-  lga_code: "LGA code",
+  lga_code: "LGA Code",
   longitude: "Longitude",
-  postcode: "Post code",
+  postcode: "Post Code",
 };

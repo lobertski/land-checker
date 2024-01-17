@@ -8,14 +8,22 @@ function App() {
   const [isOpen, setOpen] = useState(false);
   const [propertySelected, setProperty] = useState({});
 
-  const onClickMark = (property: IProperty) => {
+  const handleDrawer = (open: boolean) => {
+    setOpen(open);
+  };
+
+  const onClickMark = (property: IProperty, open: boolean) => {
     setProperty(property);
-    setOpen(true);
+    handleDrawer(open);
   };
   return (
     <>
       <Map properties={properties} onClickMark={onClickMark} />
-      <Drawer isOpen={isOpen} propertyInfo={propertySelected} />
+      <Drawer
+        isOpen={isOpen}
+        propertyInfo={propertySelected}
+        handleDrawer={handleDrawer}
+      />
     </>
   );
 }

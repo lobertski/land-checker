@@ -27,7 +27,7 @@ export const Map = ({ properties, onClickMark }: IMap) => {
             position={[property.latitude, property.longitude]}
             key={property.property_id}
             eventHandlers={{
-              click: () => onClickMark(property),
+              click: () => onClickMark(property, true),
             }}
           ></Marker>
         ))}
